@@ -63,3 +63,8 @@ console.log(q1 === q2);
 console.log(q1 === q3);
 q1.s = 42;
 console.log(q2.s);
+
+console.log(([1] + [2, 3]).replace(',', '.') - [4]);
+console.log([[], [], 1, {}] + [2]);
+console.log(String({}));
+console.log(String([]));
