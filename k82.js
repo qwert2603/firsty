@@ -1,10 +1,10 @@
-function f() {
+function _f() {
     console.log(arguments.length, arguments)
 }
 
-f();
-f(1, 2);
-f([1, 2]);
+_f();
+_f(1, 2);
+_f([1, 2]);
 
 
 function randomPointOnCircle(radius) {
