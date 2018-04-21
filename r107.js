@@ -93,3 +93,44 @@ printProperties(map, false);
 console.log("==");
 map[2] = 26;
 printProperties(map, false);
+
+
+function ArrayList(array) {
+    this.array = array;
+    this.current = 0;
+}
+
+ArrayList.prototype.hasNext = function () {
+    return this.current < this.array.length;
+};
+ArrayList.prototype.getNext = function () {
+    return this.array[this.current++];
+};
+
+function logFive(list) {
+    console.log("logFive", list);
+    for (let i = 0; i < 5 && list.hasNext(); i++) {
+        console.log(list.getNext());
+    }
+}
+
+logFive(new ArrayList([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+logFive(new ArrayList([1, 2, 3]));
+
+function RangeList(b, e) {
+    this.current = b;
+    this.e = e;
+}
+
+RangeList.prototype.hasNext = function () {
+    return this.current < this.e;
+};
+RangeList.prototype.getNext = function () {
+    return this.current++;
+};
+
+logFive(new RangeList(-2, 7));
+logFive(new RangeList(3, 5));
+
+logFive(new ArrayList([1, 2]));
+logFive(new RangeList(100, 1000));
