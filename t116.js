@@ -223,3 +223,7 @@ do {
     console.log("prot", prot);
     prot = Object.getPrototypeOf(prot);
 } while (prot != null);
+
+console.log([1, 2, 3, 4, 5, 6, 7].map(x => x * x).reduce((q, w) => q + w, 0));
+let q = 42;
+console.log(`_${q}_`);
